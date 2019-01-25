@@ -6,6 +6,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
     private IInteractable CanInteractWith;
+    private float DashButtonSpeed = 0.3f;
+    private float DashTimer;
+    [SerializeField]
+    private float DashForce;
+    private bool IsFacingRight;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -27,6 +32,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
         rbody.AddForce(new Vector2(HorizontalMovement, VerticalMovement));
+        if (HorizontalMovement > 0)
+        {
+            IsFacingRight = true;
+        }
+        else IsFacingRight = false;
     }
 
     public void Jump()
@@ -36,12 +46,26 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
     public void Interact()
     {
+
         if (CanInteractWith == null)
         {
-            Debug.Log("no interactable nearby");
+            DashTimer = Time.time + DashButtonSpeed;
+            if (Time.time <= DashTimer)
+            {
+                Dash();
+            }
             return;
         }
         CanInteractWith.Interact();
+    }
+
+    public void Dash()
+    {
+        if (IsFacingRight)
+        {
+            rbody.AddForce(new Vector2(DashForce, 0));
+        }
+        else rbody.AddForce(new Vector2(-DashForce, 0));
     }
 }
 
