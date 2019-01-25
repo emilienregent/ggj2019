@@ -41,7 +41,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
     public void Jump()
     {
-        //nothing happens
+        if (IsFacingRight)
+        {
+            rbody.AddForce(new Vector2(DashForce, 0));
+        }
+        else rbody.AddForce(new Vector2(-DashForce, 0));
     }
 
     public void Interact()
@@ -49,23 +53,9 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
         if (CanInteractWith == null)
         {
-            DashTimer = Time.time + DashButtonSpeed;
-            if (Time.time <= DashTimer)
-            {
-                Dash();
-            }
             return;
         }
         CanInteractWith.Interact();
-    }
-
-    public void Dash()
-    {
-        if (IsFacingRight)
-        {
-            rbody.AddForce(new Vector2(DashForce, 0));
-        }
-        else rbody.AddForce(new Vector2(-DashForce, 0));
     }
 }
 
