@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51a9e02b77565a49aea5240b405a40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 0
-  DashForce: 0
+  MoveForce: 10
+  DashForce: 40
   WaterVolumes: []
 --- !u!1001 &8222438860447203517
 PrefabInstance:
