@@ -6,6 +6,8 @@ TagManager:
   tags:
   - WaterVolume
   - CameraAnchor
+  - HUMAN
+  - ORC
   layers:
   - Default
   - TransparentFX

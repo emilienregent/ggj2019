@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private PlayerState _playerState = default(PlayerState);
     private GamepadState _gamepadState = default(GamepadState);
 
+    public int index { get { return _index; } }
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
     [SerializeField]
