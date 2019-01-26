@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractableWithEvent : MonoBehaviour, IInteractable
+public class Bouton2etats : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private UnityEvent OnInteract;
+    private UnityEvent OnButtonOn;
     [SerializeField]
-    private UnityEvent OnDash;
+    private UnityEvent OnButtonOff;
+    private bool ButtonOn = false;
 
     public void Interact()
     {
-        OnInteract.Invoke();
+        if (ButtonOn)
+        {
+            OnButtonOff.Invoke();
+        }
+        else OnButtonOn.Invoke();
+        ButtonOn = !ButtonOn;
     }
 
     public void DashIn()
     {
-        OnDash.Invoke();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
