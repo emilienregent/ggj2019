@@ -20,6 +20,8 @@ public class HumanMotion : MonoBehaviour, ICharacterMotion
 
     public void SetDirection(bool isFacingRight)
     {
-        transform.localScale = isFacingRight ? Vector2.right : Vector2.left;
+        float directionX = isFacingRight ? 1f : -1f;
+
+        transform.localScale = new Vector2(directionX, 1f);
     }
 }

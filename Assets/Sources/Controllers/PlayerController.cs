@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             bool isMoving = PlayerCharacter.Movement(horizontal, vertical);
 
             PlayerMotion.SetMovement(isMoving);
-            PlayerMotion.SetDirection(horizontal > 0f);
+            PlayerMotion.SetDirection(horizontal >= 0f);
 
             if (IsPressedAction(Button.BUTTON_A))
             {
