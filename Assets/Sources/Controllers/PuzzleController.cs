@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class PuzzleController : MonoBehaviour
 {
     private GameCamera _gameCamera = null;
+
+    [SerializeField]
+    private Transform _humanSpawn = null;
+
+    public GameObject _human = null;
 
     private void Awake()
     {
@@ -17,5 +20,10 @@ public class PuzzleController : MonoBehaviour
     {
         if (collision.GetComponent<ICharacter>() != null)
             _gameCamera.MoveToNextAnchor();
+    }
+
+    public void SetupPuzzle()
+    {
+        _human.transform.position = _humanSpawn.position;
     }
 }
