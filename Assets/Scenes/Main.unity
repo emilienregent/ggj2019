@@ -607,11 +607,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouton
       objectReference: {fileID: 0}
-    - target: {fileID: 3710994687834107992, guid: 126cd3bd19650704288927ac318c3e0d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.48
-      objectReference: {fileID: 0}
     - target: {fileID: 8568397238185193431, guid: 126cd3bd19650704288927ac318c3e0d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,6 +671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710994687834107992, guid: 126cd3bd19650704288927ac318c3e0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 126cd3bd19650704288927ac318c3e0d, type: 3}

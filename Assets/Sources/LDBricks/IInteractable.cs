@@ -8,4 +8,6 @@ public interface IInteractable
     void Interact();
 
     void DashIn();
+
+    bool JumpOn(HumanMotor Human);
 }
