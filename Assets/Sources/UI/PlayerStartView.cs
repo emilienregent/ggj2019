@@ -12,6 +12,7 @@ public class PlayerStartView : MonoBehaviour
     private const string PLAYER_READY_KEY_TWO = "O";
 
     [SerializeField] private Text _text = null;
+    [SerializeField] private Image _image = null;
     [SerializeField] private PlayerTag _tag = default(PlayerTag);
     private PlayerController _player = null;
     private Animator _textAnimator = null;
@@ -45,6 +46,7 @@ public class PlayerStartView : MonoBehaviour
         else if (_text.enabled == true)
         {
             _text.enabled = false;
+            _image.enabled = false;
         }
     }
 }
