@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
     public int index { get { return _index; } }
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
-    [SerializeField]
+
     private ICharacter PlayerCharacter;
+    private ICharacterMotion PlayerMotion;
 
     private void Start()
     {
         PlayerCharacter = GetComponentInChildren<ICharacter>();
+        PlayerMotion = GetComponentInChildren<ICharacterMotion>();
     }
 
     public void AssignGamepad(int index, bool isGamepad)
@@ -53,7 +55,11 @@ public class PlayerController : MonoBehaviour
             float vertical = _gamepadState == GamepadState.GAMEPAD_PLUGGED
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
-            PlayerCharacter.Movement(horizontal, vertical);
+
+            bool isMoving = PlayerCharacter.Movement(horizontal, vertical);
+
+            PlayerMotion.SetMovement(isMoving);
+
             if (IsPressedAction(Button.BUTTON_A))
             {
                 PlayerCharacter.Jump();

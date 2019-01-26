@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ICharacter
 {
-    void Movement(float HorizontalMovement, float VerticalMovement);
+    bool Movement(float HorizontalMovement, float VerticalMovement);
 
     void Jump();
 

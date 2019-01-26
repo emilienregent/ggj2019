@@ -49,11 +49,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         else rbody.gravityScale = 0;
     }
 
-    public void Movement(float HorizontalMovement, float VerticalMovement)
+    public bool Movement(float HorizontalMovement, float VerticalMovement)
     {
         if (WaterVolumes.Count == 0)
         {
-            return;
+            return false;
         }
 
         Vector2 force = new Vector2(HorizontalMovement, VerticalMovement) * MoveForce;
@@ -67,6 +67,8 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         else IsFacingRight = false;
 
         DashInteractTime = Time.time + 0.5f;
+
+        return Mathf.Approximately(HorizontalMovement, 0f) == false || Mathf.Approximately(VerticalMovement, 0f) == false;
     }
 
     public void Jump()

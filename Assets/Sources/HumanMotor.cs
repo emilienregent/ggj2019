@@ -16,11 +16,13 @@ public class HumanMotor : MonoBehaviour, ICharacter
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Movement(float HorizontalMovement, float VerticalMovement)
+    public bool Movement(float HorizontalMovement, float VerticalMovement)
     {
         Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
 
         rbody.AddForce(force);
+
+        return Mathf.Approximately(HorizontalMovement, 0f) == false;
     }
 
     public void Jump()
