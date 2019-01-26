@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public class HumanMotor : MonoBehaviour
+public class HumanMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
     [SerializeField]
@@ -36,12 +36,13 @@ public class HumanMotor : MonoBehaviour
         if (IsGrounded())
         {
             rbody.AddForce(new Vector2(0,JumpForce));
+            Debug.Log("Human Jump");
         }
     }
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.5f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.55f);
         if (hit)
         {
             return true;
@@ -51,6 +52,7 @@ public class HumanMotor : MonoBehaviour
     }
     public void Interact()
     {
+        Debug.Log("Human Interact Attempt");
         if (CanInteractWith == null)
         {
             Debug.Log("no interactable nearby");
