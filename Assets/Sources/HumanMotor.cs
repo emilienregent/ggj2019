@@ -5,8 +5,11 @@ using UnityEngine;
 public class HumanMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
-    [SerializeField]
-    private float JumpForce;
+
+    [SerializeField] private float MoveForce;
+    [SerializeField] private float JumpForce;
+
+    private IInteractable CanInteractWith;
     public List<IInteractable> InteractableList { get; set; }
 
     void Start()
@@ -16,24 +19,28 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
-        rbody.AddForce(new Vector2(HorizontalMovement, 0));
+        Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
+
+        rbody.AddForce(force);
     }
 
     public void Jump()
     {
         if (IsGrounded())
         {
-            rbody.AddForce(new Vector2(0,JumpForce));
+            rbody.AddForce(new Vector2(0f,JumpForce));
         }
     }
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.55f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 1.1f);
+
         if (hit)
         {
             return true;
         }
+
         return false;
 
     }

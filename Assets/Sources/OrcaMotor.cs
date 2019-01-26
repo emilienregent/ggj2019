@@ -7,8 +7,8 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private Rigidbody2D rbody;
     private IInteractable CanDashIn;
     private float DashButtonSpeed = 0.3f;
-    [SerializeField]
-    private float DashForce;
+    [SerializeField] private float MoveForce;
+    [SerializeField] private float DashForce;
     private bool IsFacingRight;
     private float DashInteractTime;
     public List<GameObject> WaterVolumes;
@@ -53,12 +53,17 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         {
             return;
         }
-        rbody.AddForce(new Vector2(HorizontalMovement, VerticalMovement));
+
+        Vector2 force = new Vector2(HorizontalMovement, VerticalMovement) * MoveForce;
+
+        rbody.AddForce(force);
+
         if (HorizontalMovement > 0)
         {
             IsFacingRight = true;
         }
         else IsFacingRight = false;
+
         DashInteractTime = Time.time + 0.5f;
     }
 
@@ -66,9 +71,9 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     {
         if (IsFacingRight)
         {
-            rbody.AddForce(new Vector2(DashForce, 0));
+            rbody.AddForce(new Vector2(DashForce, 0f));
         }
-        else rbody.AddForce(new Vector2(-DashForce, 0));
+        else rbody.AddForce(new Vector2(-DashForce, 0f));
     }
 
     public void Interact()
