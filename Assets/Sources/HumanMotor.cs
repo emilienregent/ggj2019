@@ -69,6 +69,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
             );
         return grounded;
     }
+
     public void Interact()
     {
         if (!_hasControl)
@@ -78,6 +79,11 @@ public class HumanMotor : MonoBehaviour, ICharacter
         {
             InteractWith.Interact();
         }
+    }
+
+    public Vector2 GetPosition()
+    {
+        return transform.position;
     }
 
     public void TransitionStart()

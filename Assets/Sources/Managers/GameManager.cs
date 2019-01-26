@@ -60,7 +60,14 @@ public class GameManager
         }
     }
 
-    public void Start()
+    public void StartIntro()
+    {
+        _gameState = GameState.INTRO;
+
+        UnityEngine.Debug.Log("Intro running.");
+    }
+
+    public void StartGame()
     {
         _gameState = GameState.RUNNING;
 

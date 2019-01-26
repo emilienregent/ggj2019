@@ -54,7 +54,7 @@ public class StartController : MonoBehaviour
     {
         if (GameManager.gameState == GameState.INITIALIZED && GetPlayerReadyCount() == players.Count)
         {
-            GameManager.instance.Start();
+            GameManager.instance.StartGame();
         }
     }
 

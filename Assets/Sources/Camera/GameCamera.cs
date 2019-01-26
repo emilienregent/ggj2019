@@ -15,6 +15,8 @@ public class GameCamera : MonoBehaviour
 
     public float movementTime = 3f;
 
+    public Collider2D boundary = null;
+
     private void Start()
     {
         GameObject[] anchorGameObjects = GameObject.FindGameObjectsWithTag("CameraAnchor");
@@ -60,5 +62,10 @@ public class GameCamera : MonoBehaviour
 
             }
         }
+    }
+
+    public void EnableBoundary(bool isEnable)
+    {
+        boundary.enabled = isEnable;
     }
 }

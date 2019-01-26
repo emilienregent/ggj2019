@@ -10,5 +10,7 @@ public interface ICharacter
 
     void Interact();
 
+    Vector2 GetPosition();
+
     List<IInteractable> InteractableList { get; set; }
 }
