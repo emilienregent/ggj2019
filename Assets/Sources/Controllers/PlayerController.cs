@@ -11,13 +11,16 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
 
-    private ICharacter PlayerCharacter;
-    private ICharacterMotion PlayerMotion;
+    private ICharacter _playerCharacter;
+    private ICharacterMotion _playerMotion;
 
-    private void Start()
+    public ICharacter playerCharacter { get { return _playerCharacter; } }
+    public ICharacterMotion playerMotion { get { return _playerMotion; } }
+
+    private void Awake()
     {
-        PlayerCharacter = GetComponentInChildren<ICharacter>();
-        PlayerMotion = GetComponentInChildren<ICharacterMotion>();
+        _playerCharacter = GetComponentInChildren<ICharacter>();
+        _playerMotion = GetComponentInChildren<ICharacterMotion>();
     }
 
     public void AssignGamepad(int index, bool isGamepad)
@@ -56,25 +59,25 @@ public class PlayerController : MonoBehaviour
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
 
-            bool isMoving = PlayerCharacter.Movement(horizontal, vertical);
+            bool isMoving = _playerCharacter.Movement(horizontal, vertical);
 
-            PlayerMotion.SetMovement(isMoving);
+            _playerMotion.SetMovement(isMoving);
 
             if (isMoving == true)
             {
-                PlayerMotion.SetDirection(horizontal >= 0f);
+                _playerMotion.SetDirection(horizontal >= 0f);
             }
 
             if (IsPressedAction(Button.BUTTON_A))
             {
-                PlayerCharacter.Jump();
+                _playerCharacter.Jump();
 
-                PlayerMotion.DoJump();
+                _playerMotion.DoJump();
             }
 
             if (IsPressedAction(Button.BUTTON_X))
             {
-                PlayerCharacter.Interact();
+                _playerCharacter.Interact();
             }
         }
     }

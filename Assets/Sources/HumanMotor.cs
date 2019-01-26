@@ -64,6 +64,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
             );
         return grounded;
     }
+
     public void Interact()
     {
         foreach (IInteractable InteractWith in InteractableList)
@@ -71,6 +72,12 @@ public class HumanMotor : MonoBehaviour, ICharacter
             InteractWith.Interact();
         }
     }
+
+    public Vector2 GetPosition()
+    {
+        return transform.position;
+    }
+
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = new Color(1, 0, 0, 0.5f);

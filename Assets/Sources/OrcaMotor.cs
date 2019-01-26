@@ -83,5 +83,10 @@ public class OrcaMotor : MonoBehaviour, ICharacter
             InteractWith.Interact();
         }
     }
+
+    public Vector2 GetPosition()
+    {
+        return transform.position;
+    }
 }
 

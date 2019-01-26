@@ -2,6 +2,7 @@
 {
     NONE,
     INITIALIZED,
+    INTRO,
     RUNNING,
     STOP
 }

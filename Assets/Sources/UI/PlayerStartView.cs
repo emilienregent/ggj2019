@@ -30,7 +30,7 @@ public class PlayerStartView : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.gameState != GameState.RUNNING)
+        if (GameManager.gameState != GameState.INTRO && GameManager.gameState != GameState.RUNNING)
         {
             string input = _player.gamepadState == GamepadState.GAMEPAD_PLUGGED
                                   ? PLAYER_READY_BUTTON

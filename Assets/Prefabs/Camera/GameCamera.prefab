@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementTime: 1.5
+  boundary: {fileID: 8595995323471956847}
 --- !u!1 &6478596578588398722
 GameObject:
   m_ObjectHideFlags: 0
