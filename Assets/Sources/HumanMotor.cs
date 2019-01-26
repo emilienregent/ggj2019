@@ -6,7 +6,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
 
-    [SerializeField] private float MoveForce;
+    [SerializeField] private float MoveMultiplier = .1f;
     [SerializeField] private float JumpForce;
     [SerializeField]
     public List<IInteractable> InteractableList { get; set; } = new List<IInteractable>();
@@ -18,9 +18,22 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
-        Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
+        if (Mathf.Abs(HorizontalMovement) > 0.2f)
+        {
+            float distance = MoveMultiplier * HorizontalMovement;
+            float direction = distance > 0 ? .5f : -.5f;
 
-        rbody.AddForce(force);
+            bool pushing = Physics2D.OverlapArea(
+                new Vector2(transform.position.x + direction, transform.position.y + .5f), 
+                new Vector2(transform.position.x + direction + distance, transform.position.y - .5f),
+                LayerMask.GetMask("Movement Solid")
+            );
+
+            Debug.Log(pushing);
+
+            if (!pushing)
+                transform.position += new Vector3(MoveMultiplier * HorizontalMovement, 0f, 0f);
+        }
     }
 
     public void Jump()
@@ -33,7 +46,11 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     private bool IsGrounded()
     {
-        bool grounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 1.05f), new Vector2(transform.position.x + 0.5f, transform.position.y - 1.1f));
+        bool grounded = Physics2D.OverlapArea(
+                new Vector2(transform.position.x - 0.5f, transform.position.y - 1f), 
+                new Vector2(transform.position.x + 0.5f, transform.position.y - 1.1f),
+                LayerMask.GetMask("Movement Solid")
+            );
         return grounded;
     }
     public void Interact()

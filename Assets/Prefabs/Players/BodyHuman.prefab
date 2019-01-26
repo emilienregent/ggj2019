@@ -47,7 +47,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: c091944eed10a40ffb728214247acc4b, type: 2}
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f92458bfd0f32418e1c1ab2e2e8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 100
-  JumpForce: 250
+  MoveMultiplier: 0.2
+  JumpForce: 200
 --- !u!1001 &1700450386403187008
 PrefabInstance:
   m_ObjectHideFlags: 0

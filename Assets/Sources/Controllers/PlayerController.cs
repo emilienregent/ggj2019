@@ -54,10 +54,12 @@ public class PlayerController : MonoBehaviour
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
             PlayerCharacter.Movement(horizontal, vertical);
+
             if (IsPressedAction(Button.BUTTON_A))
             {
                 PlayerCharacter.Jump();
             }
+
             if (IsPressedAction(Button.BUTTON_X))
             {
                 PlayerCharacter.Interact();
