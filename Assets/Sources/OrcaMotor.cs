@@ -13,7 +13,8 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private float DashInteractTime;
     [SerializeField]
     public List<GameObject> WaterVolumes;
-    public List<IInteractable> InteractableList { get; set; }
+    [SerializeField]
+    public List<IInteractable> InteractableList { get; set; } = new List<IInteractable>();
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
