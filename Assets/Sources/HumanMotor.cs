@@ -8,9 +8,8 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     [SerializeField] private float MoveForce;
     [SerializeField] private float JumpForce;
-
-    private IInteractable CanInteractWith;
-    public List<IInteractable> InteractableList { get; set; }
+    [SerializeField]
+    public List<IInteractable> InteractableList { get; set; } = new List<IInteractable>();
 
     void Start()
     {
@@ -44,9 +43,9 @@ public class HumanMotor : MonoBehaviour, ICharacter
             InteractWith.Interact();
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(1, 0, 0, 0.5f);
-        Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y -1.5f),Vector3.one);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = new Color(1, 0, 0, 0.5f);
+    //    Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y - 1.075f), new Vector3(1, 0.05f,0));
+    //}
 }

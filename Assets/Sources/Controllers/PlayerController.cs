@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Check button pressed (1=A, 2=B, 3=Y, 4=X)
+    // Check button pressed (1=A, 2=B, 3=X, 4=Y)
     private bool IsPressedAction(Button button)
     {
         string actionName = "P" + _index + "_Action" + (int)button;

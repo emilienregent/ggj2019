@@ -29,11 +29,15 @@ public class Bouton2etats : MonoBehaviour, IInteractable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)
+        {
             collision.GetComponent<ICharacter>().InteractableList.Add(this);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)
+        {
             collision.GetComponent<ICharacter>().InteractableList.Remove(this);
+        }
     }
 }
