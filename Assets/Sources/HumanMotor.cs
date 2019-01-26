@@ -29,7 +29,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
                 ~LayerMask.GetMask("Players")
             );
 
-            if (!pushing)
+            if (!pushing || pushing.isTrigger == true)
                 transform.position += new Vector3(MoveMultiplier * HorizontalMovement, 0f, 0f);
 
             return true;
