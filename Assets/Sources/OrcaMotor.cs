@@ -9,6 +9,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private float DashButtonSpeed = 0.3f;
     [SerializeField] private float MoveForce;
     [SerializeField] private float DashForce;
+    [SerializeField]
     private float DashDelay;
     [SerializeField]
     public List<GameObject> WaterVolumes;
@@ -66,11 +67,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
     public void Jump()
     {
-        if (DashDelay <= Time.time)
+        if (DashDelay >= Time.time)
         {
             return;
         }
-        rbody.AddForce(new Vector2(DashForce * OrcVisual.transform.localScale.x, 0f));
+        rbody.AddForce(new Vector2(DashForce * -OrcVisual.transform.localScale.x, 0f));
         DashDelay = Time.time + 0.3f;
     }
 
