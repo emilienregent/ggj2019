@@ -14,6 +14,7 @@ public class PlayerStartView : MonoBehaviour
     [SerializeField] private Text _text = null;
     [SerializeField] private PlayerTag _tag = default(PlayerTag);
     private PlayerController _player = null;
+    private Animator _textAnimator = null;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class PlayerStartView : MonoBehaviour
         UnityEngine.Assertions.Assert.IsNotNull(playerGameObject, "Can't find a player gameobject with " + _tag.ToString().ToLower());
 
         _player = playerGameObject.GetComponent<PlayerController>();
+        _textAnimator = _text.GetComponent<Animator>();
 
         UnityEngine.Assertions.Assert.IsNotNull(_player, "Can't find a PlayerController attached");
     }
@@ -37,6 +39,8 @@ public class PlayerStartView : MonoBehaviour
             _text.text = _player.playerState == PlayerState.READY
                 ? string.Format(PLAYER_READY_TEXT, _player.index)
                 : string.Format(PLAYER_NOT_READY_TEXT, _player.index, input);
+
+            _textAnimator.SetBool("Blink", _player.playerState != PlayerState.READY);
         }
         else if (_text.enabled == true)
         {
