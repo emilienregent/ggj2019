@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 881903751083255070}
   m_Layer: 0
   m_Name: WaterVolume
-  m_TagString: WaterVolume
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
