@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        PlayerCharacter = GetComponent<ICharacter>();
+        PlayerCharacter = GetComponentInChildren<ICharacter>();
     }
 
     public void AssignGamepad(int index, bool isGamepad)
