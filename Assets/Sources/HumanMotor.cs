@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
-public class HumanMotor : MonoBehaviour
+public class HumanMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
     [SerializeField]
