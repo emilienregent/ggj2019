@@ -9,7 +9,6 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private float DashButtonSpeed = 0.3f;
     [SerializeField] private float MoveForce;
     [SerializeField] private float DashForce;
-    private bool IsFacingRight;
     private float DashDelay;
     [SerializeField]
     public List<GameObject> WaterVolumes;
@@ -61,12 +60,6 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         Vector2 force = new Vector2(HorizontalMovement, VerticalMovement) * MoveForce;
 
         rbody.AddForce(force);
-
-        if (HorizontalMovement > 0)
-        {
-            IsFacingRight = true;
-        }
-        else IsFacingRight = false;
         OrcVisual.transform.eulerAngles = new Vector3(0,0,20 * VerticalMovement * -OrcVisual.transform.localScale.x);
         return Mathf.Approximately(HorizontalMovement, 0f) == false || Mathf.Approximately(VerticalMovement, 0f) == false;
     }
@@ -77,11 +70,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         {
             return;
         }
-        if (IsFacingRight)
-        {
-            rbody.AddForce(new Vector2(DashForce, 0f));
-        }
-        else rbody.AddForce(new Vector2(-DashForce, 0f));
+        rbody.AddForce(new Vector2(DashForce * OrcVisual.transform.localScale.x, 0f));
         DashDelay = Time.time + 0.3f;
     }
 
