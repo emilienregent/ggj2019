@@ -41,14 +41,6 @@ public class PlayerController : MonoBehaviour
 
                 //TODO: Display player ready state (sound/image)
             }
-            if (IsPressedAction(Button.BUTTON_A))
-            {
-                PlayerCharacter.Jump();
-            }
-            if (IsPressedAction(Button.BUTTON_X))
-            {
-                PlayerCharacter.Interact();
-            }
         }
 
         if (GameManager.gameState == GameState.RUNNING)
@@ -61,6 +53,14 @@ public class PlayerController : MonoBehaviour
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
             PlayerCharacter.Movement(horizontal, vertical);
+            if (IsPressedAction(Button.BUTTON_A))
+            {
+                PlayerCharacter.Jump();
+            }
+            if (IsPressedAction(Button.BUTTON_X))
+            {
+                PlayerCharacter.Interact();
+            }
         }
     }
 
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
         if (isPressed == true)
         {
-            UnityEngine.Debug.Log(actionName + " is pressed ");
+            Debug.Log(actionName + " is pressed ");
         }
 
         return isPressed;

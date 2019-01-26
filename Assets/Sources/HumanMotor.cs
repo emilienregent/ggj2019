@@ -20,7 +20,6 @@ public class HumanMotor : MonoBehaviour, ICharacter
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
         Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
-        Debug.Log(HorizontalMovement);
 
         rbody.AddForce(force);
     }
@@ -35,15 +34,8 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 1.1f);
-
-        if (hit)
-        {
-            return true;
-        }
-
-        return false;
-
+        bool grounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 1.05f), new Vector2(transform.position.x + 0.5f, transform.position.y - 1.1f));
+        return grounded;
     }
     public void Interact()
     {
@@ -51,5 +43,10 @@ public class HumanMotor : MonoBehaviour, ICharacter
         {
             InteractWith.Interact();
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1, 0, 0, 0.5f);
+        Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y -1.5f),Vector3.one);
     }
 }
