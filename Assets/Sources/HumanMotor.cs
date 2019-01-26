@@ -21,12 +21,12 @@ public class HumanMotor : MonoBehaviour, ICharacter
         if (Mathf.Abs(HorizontalMovement) > 0.2f)
         {
             float distance = MoveMultiplier * HorizontalMovement;
-            float direction = distance > 0 ? .5f : -.5f;
+            float direction = distance > 0 ? .6f : -.6f;
 
-            bool pushing = Physics2D.OverlapArea(
-                new Vector2(transform.position.x + direction, transform.position.y + .5f), 
-                new Vector2(transform.position.x + direction + distance, transform.position.y - .5f),
-                LayerMask.GetMask("Movement Solid")
+            Collider2D pushing = Physics2D.OverlapArea(
+                new Vector2(transform.position.x + direction, transform.position.y + .9f), 
+                new Vector2(transform.position.x + direction + distance, transform.position.y - .9f),
+                ~LayerMask.GetMask("Players")
             );
 
             if (!pushing)
@@ -51,7 +51,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
         bool grounded = Physics2D.OverlapArea(
                 new Vector2(transform.position.x - 0.5f, transform.position.y - 1f), 
                 new Vector2(transform.position.x + 0.5f, transform.position.y - 1.1f),
-                LayerMask.GetMask("Movement Solid")
+                ~LayerMask.GetMask("Players")
             );
         return grounded;
     }
