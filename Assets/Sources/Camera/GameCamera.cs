@@ -35,6 +35,9 @@ public class GameCamera : MonoBehaviour
 
             _currentMovementTime += Time.deltaTime;
             _isMoving &= _currentMovementTime < movementTime;
+
+            if (!_isMoving)
+                _currentAnchor.OnCameraReach.Invoke();
         }
     }
 
