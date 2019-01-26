@@ -9,4 +9,6 @@ public interface ICharacter
     void Jump();
 
     void Interact();
+
+    List<GameObject> InteractableList { get; set; }
 }

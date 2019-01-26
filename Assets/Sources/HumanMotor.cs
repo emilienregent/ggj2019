@@ -7,23 +7,11 @@ public class HumanMotor : MonoBehaviour, ICharacter
     private Rigidbody2D rbody;
     [SerializeField]
     private float JumpForce;
-    private IInteractable CanInteractWith;
+    public List<GameObject> InteractableList { get; set; }
 
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CanInteractWith = collision.transform.GetComponent<IInteractable>();
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (CanInteractWith == collision.transform.GetComponent<IInteractable>())
-        {
-            CanInteractWith = null;
-        }
     }
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
@@ -51,12 +39,10 @@ public class HumanMotor : MonoBehaviour, ICharacter
     }
     public void Interact()
     {
-        Debug.Log("Human Interact Attempt");
-        if (CanInteractWith == null)
+        foreach (GameObject InteractWith in InteractableList)
         {
-            Debug.Log("no interactable nearby");
-            return;
+            IInteractable InteractWithComponent = InteractWith.GetComponent<IInteractable>();
+            InteractWithComponent.Interact();
         }
-        CanInteractWith.Interact();
     }
 }

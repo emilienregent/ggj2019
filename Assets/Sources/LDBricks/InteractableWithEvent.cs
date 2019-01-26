@@ -19,4 +19,9 @@ public class InteractableWithEvent : MonoBehaviour, IInteractable
     {
         OnDash.Invoke();
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
 }

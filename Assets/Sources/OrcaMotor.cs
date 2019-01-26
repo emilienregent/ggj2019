@@ -5,31 +5,32 @@ using UnityEngine;
 public class OrcaMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
-    private IInteractable CanInteractWith;
+    private IInteractable CanDashIn;
     private float DashButtonSpeed = 0.3f;
     [SerializeField]
     private float DashForce;
     private bool IsFacingRight;
     private float DashInteractTime;
     public List<GameObject> WaterVolumes;
+    public List<GameObject> InteractableList { get; set; };
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CanInteractWith = collision.transform.GetComponent<IInteractable>();
+        CanDashIn = collision.transform.GetComponent<IInteractable>();
         if (DashInteractTime >= Time.time)
         {
-            if (CanInteractWith != null)
+            if (CanDashIn != null)
             {
-                CanInteractWith.DashIn();
+                CanDashIn.DashIn();
             }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (CanInteractWith == collision.transform.GetComponent<IInteractable>())
+        if (CanDashIn == collision.transform.GetComponent<IInteractable>())
         {
-            CanInteractWith = null;
+            CanDashIn = null;
         }
     }
 
@@ -73,11 +74,11 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     public void Interact()
     {
 
-        if (CanInteractWith == null)
+        foreach(GameObject InteractWith in InteractableList)
         {
-            return;
+            IInteractable InteractWithComponent = InteractWith.GetComponent<IInteractable>();
+            InteractWithComponent.Interact();
         }
-        CanInteractWith.Interact();
     }
 }
 
