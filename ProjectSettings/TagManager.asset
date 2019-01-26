@@ -8,6 +8,7 @@ TagManager:
   - CameraAnchor
   - HUMAN
   - ORC
+  - HumanBody
   layers:
   - Default
   - TransparentFX

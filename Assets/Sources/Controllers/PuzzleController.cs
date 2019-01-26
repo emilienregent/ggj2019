@@ -11,7 +11,7 @@ public class PuzzleController : MonoBehaviour
 
     private void Awake()
     {
-        _human = GameObject.FindWithTag(PlayerTag.HUMAN.ToString());
+        _human = GameObject.FindWithTag("HumanBody");
         _gameCamera = Camera.main.GetComponent<GameCamera>();
 
         UnityEngine.Assertions.Assert.IsNotNull(_human, "Can't find a HUMAN player.");
