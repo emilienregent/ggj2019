@@ -42,9 +42,9 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     {
         if (WaterVolumes.Count == 0)
         {
-            rbody.gravityScale = 0;
+            rbody.gravityScale = 1;
         }
-        else rbody.gravityScale = 1;
+        else rbody.gravityScale = 0;
     }
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
