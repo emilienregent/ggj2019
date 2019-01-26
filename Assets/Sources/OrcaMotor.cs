@@ -11,6 +11,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     [SerializeField] private float DashForce;
     private bool IsFacingRight;
     private float DashInteractTime;
+    [SerializeField]
     public List<GameObject> WaterVolumes;
     public List<IInteractable> InteractableList { get; set; }
 

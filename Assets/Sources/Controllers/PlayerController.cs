@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
             float vertical = _gamepadState == GamepadState.GAMEPAD_PLUGGED
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
-
-            //TODO: Call Move on iCharacter with the horizontal and vertical
             PlayerCharacter.Movement(horizontal, vertical);
         }
     }
