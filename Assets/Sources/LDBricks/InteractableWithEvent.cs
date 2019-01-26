@@ -35,4 +35,5 @@ public class InteractableWithEvent : MonoBehaviour, IInteractable
         if (collision.GetComponent<ICharacter>() != null)
             collision.GetComponent<ICharacter>().InteractableList.Remove(this);
     }
+
 }

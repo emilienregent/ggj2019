@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _humanSpawn: {fileID: 7245847497737885234}
-  _human: {fileID: 0}
 --- !u!61 &6147050436209406179
 BoxCollider2D:
   m_ObjectHideFlags: 0
