@@ -51,6 +51,7 @@ public class Echelle : MonoBehaviour, IInteractable
         _climbingHuman = Human.gameObject;
         _climbingHuman.SetActive(false);
         _climbAnim.SetActive(true);
+        _climbingHuman.GetComponent<ICharacter>().InteractableList.Remove(this);
         _isClimbing = true;
         return true;
     }
@@ -60,6 +61,7 @@ public class Echelle : MonoBehaviour, IInteractable
         if (collision.GetComponent<ICharacter>() != null)
             collision.GetComponent<ICharacter>().InteractableList.Add(this);
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)
