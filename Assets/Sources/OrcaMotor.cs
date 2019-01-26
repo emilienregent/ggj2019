@@ -11,6 +11,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private float DashForce;
     private bool IsFacingRight;
     private float DashInteractTime;
+    public List<GameObject> WaterVolumes;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,6 +24,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
             }
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (CanInteractWith == collision.transform.GetComponent<IInteractable>())
@@ -38,6 +40,10 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
+        if (WaterVolumes.Count == 0)
+        {
+            return;
+        }
         rbody.AddForce(new Vector2(HorizontalMovement, VerticalMovement));
         if (HorizontalMovement > 0)
         {
