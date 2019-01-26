@@ -10,37 +10,50 @@ public class PlayerController : MonoBehaviour
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
 
-    public void AssignGamepad(int index)
+    public void AssignGamepad(int index, bool isGamepad)
     {
         _index = index + 1;
-        _gamepadState = GamepadState.PLUGGED;
+        _gamepadState = isGamepad ? GamepadState.GAMEPAD_PLUGGED : GamepadState.KEYBOARD;
         _playerState = PlayerState.INITIALIZED;
     }
 
     private void Update()
     {
-        if (_gamepadState == GamepadState.PLUGGED)
+        if (_gamepadState == GamepadState.GAMEPAD_PLUGGED || _gamepadState == GamepadState.KEYBOARD)
         {
-            if (IsPressedAction(Button.BUTTON_A) && _playerState == PlayerState.INITIALIZED)
+            if (_playerState == PlayerState.INITIALIZED && IsPressedAction(Button.BUTTON_A))
             {
                 _playerState = PlayerState.READY;
 
                 //TODO: Display player ready state (sound/image)
             }
 
-            if (IsPressedAction(Button.BUTTON_B) && _playerState == PlayerState.READY)
+            if (_playerState == PlayerState.READY && IsPressedAction(Button.BUTTON_B))
             {
                 _playerState = PlayerState.INITIALIZED;
 
                 //TODO: Display player ready state (sound/image)
             }
         }
+
+        if (GameManager.gameState == GameState.RUNNING)
+        {
+            float horizontal = _gamepadState == GamepadState.GAMEPAD_PLUGGED 
+                ? Input.GetAxis("P" + _index + "_Horizontal")
+                : Input.GetAxis("P" + _index + "_Horizontal_Keyboard");
+
+            float vertical = _gamepadState == GamepadState.GAMEPAD_PLUGGED
+                ? Input.GetAxis("P" + _index + "_Vertical")
+                : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
+
+            //TODO: Call Move on iCharacter with the horizontal and vertical
+        }
     }
 
     // Check button pressed (1=A, 2=B, 3=Y, 4=X)
     private bool IsPressedAction(Button button)
     {
-        string actionName = "Action" + (int)button + "_P" + _index;
+        string actionName = "P" + _index + "_Action" + (int)button;
         bool isPressed = Input.GetButtonDown(actionName);
 
         if (isPressed == true)

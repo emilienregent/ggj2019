@@ -15,6 +15,8 @@ public class StartController : MonoBehaviour
         {
             if (Input.GetJoystickNames()[i] != string.Empty)
             {
+                UnityEngine.Debug.Log("Assign Joystick '" + Input.GetJoystickNames()[i] + "' to player " + (i + 1));
+
                 AssignToPlayer(i);
             }
             else
@@ -27,14 +29,23 @@ public class StartController : MonoBehaviour
                 break;
             }
         }
+
+        if (_playerCount < players.Count)
+        {
+            for (int i = _playerCount; i < players.Count; ++i)
+            {
+                UnityEngine.Debug.Log("Can't find a joystick for player " + (i + 1) + " assigning keyboard instead");
+
+                AssignToPlayer(i, false);
+            }
+        }
     }
 
-    private void AssignToPlayer(int index)
+    private void AssignToPlayer(int index, bool isGamepad = true)
     {
-        UnityEngine.Debug.Log("Assign Joystick '" + Input.GetJoystickNames()[index] + "' to player " + (index + 1));
-
         PlayerController player = players[_playerCount];
-        player.AssignGamepad(index);
+
+        player.AssignGamepad(index, isGamepad);
 
         _playerCount++;
     }

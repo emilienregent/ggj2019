@@ -1,5 +1,6 @@
 ﻿public enum GamepadState
 {
-    UNPLUGGED,
-    PLUGGED
+    GAMEPAD_UNPLUGGED,
+    GAMEPAD_PLUGGED,
+    KEYBOARD
 }
