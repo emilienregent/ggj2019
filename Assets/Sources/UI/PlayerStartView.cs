@@ -28,12 +28,19 @@ public class PlayerStartView : MonoBehaviour
 
     private void Update()
     {
-        string input = _player.gamepadState == GamepadState.GAMEPAD_PLUGGED
-            ? PLAYER_READY_BUTTON
-            : _player.index == 1 ? PLAYER_READY_KEY_ONE : PLAYER_READY_KEY_TWO;
-
-        _text.text = _player.playerState == PlayerState.READY
-        ? string.Format(PLAYER_READY_TEXT, _player.index)
-        : string.Format(PLAYER_NOT_READY_TEXT, _player.index, input);
+        if (GameManager.gameState != GameState.RUNNING)
+        {
+            string input = _player.gamepadState == GamepadState.GAMEPAD_PLUGGED
+                                  ? PLAYER_READY_BUTTON
+                                  : _player.index == 1 ? PLAYER_READY_KEY_ONE : PLAYER_READY_KEY_TWO;
+            
+            _text.text = _player.playerState == PlayerState.READY
+                ? string.Format(PLAYER_READY_TEXT, _player.index)
+                : string.Format(PLAYER_NOT_READY_TEXT, _player.index, input);
+        }
+        else if (_text.enabled == true)
+        {
+            _text.enabled = false;
+        }
     }
 }
