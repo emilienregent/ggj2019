@@ -36,7 +36,6 @@ public class HumanMotor : MonoBehaviour, ICharacter
         if (IsGrounded())
         {
             rbody.AddForce(new Vector2(0,JumpForce));
-            Debug.Log("Human Jump");
         }
     }
 

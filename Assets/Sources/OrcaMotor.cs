@@ -37,6 +37,14 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     {
         rbody = GetComponent<Rigidbody2D>();
     }
+    private void Update()
+    {
+        if (WaterVolumes.Count == 0)
+        {
+            rbody.gravityScale = 0;
+        }
+        else rbody.gravityScale = 1;
+    }
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
