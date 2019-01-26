@@ -17,7 +17,10 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         CanInteractWith = collision.transform.GetComponent<IInteractable>();
         if (DashInteractTime >= Time.time)
         {
-            CanInteractWith.DashIn();
+            if (CanInteractWith != null)
+            {
+                CanInteractWith.DashIn();
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

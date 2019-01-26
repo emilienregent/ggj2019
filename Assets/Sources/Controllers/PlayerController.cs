@@ -9,14 +9,19 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
+    [SerializeField]
     private ICharacter PlayerCharacter;
+
+    private void Start()
+    {
+        PlayerCharacter = GetComponent<ICharacter>();
+    }
 
     public void AssignGamepad(int index, bool isGamepad)
     {
         _index = index + 1;
         _gamepadState = isGamepad ? GamepadState.GAMEPAD_PLUGGED : GamepadState.KEYBOARD;
         _playerState = PlayerState.INITIALIZED;
-        PlayerCharacter = GetComponent<ICharacter>();
     }
 
     private void Update()
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
             }
             if (IsPressedAction(Button.BUTTON_A))
             {
+                Debug.Log(PlayerCharacter);
                 PlayerCharacter.Jump();
             }
             if (IsPressedAction(Button.BUTTON_X))
