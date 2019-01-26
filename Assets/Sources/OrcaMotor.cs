@@ -12,7 +12,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private bool IsFacingRight;
     private float DashInteractTime;
     public List<GameObject> WaterVolumes;
-    public List<GameObject> InteractableList { get; set; }
+    public List<IInteractable> InteractableList { get; set; }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -74,10 +74,9 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     public void Interact()
     {
 
-        foreach(GameObject InteractWith in InteractableList)
+        foreach(IInteractable InteractWith in InteractableList)
         {
-            IInteractable InteractWithComponent = InteractWith.GetComponent<IInteractable>();
-            InteractWithComponent.Interact();
+            InteractWith.Interact();
         }
     }
 }

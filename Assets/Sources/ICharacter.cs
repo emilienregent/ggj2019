@@ -10,5 +10,5 @@ public interface ICharacter
 
     void Interact();
 
-    List<GameObject> InteractableList { get; set; }
+    List<IInteractable> InteractableList { get; set; }
 }
