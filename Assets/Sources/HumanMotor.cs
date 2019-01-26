@@ -96,6 +96,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
     {
         rbody.velocity = Vector2.zero;
         rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rbody.WakeUp();
         _hasControl = true;
         gameObject.SetActive(true);
     }
