@@ -7,6 +7,34 @@ public class Echelle : MonoBehaviour, IInteractable
     [SerializeField]
     private GameObject TeleportPoint;
 
+    [SerializeField]
+    private GameObject _climbAnim = null;
+
+    [SerializeField]
+    private float _animTimer = 1f;
+
+    private GameObject _climbingHuman = null;
+    private bool _isClimbing = false;
+    private float _animTime = 0f;
+
+    public void Update()
+    {
+        if (!_isClimbing)
+        {
+            return;
+        }
+         
+        _animTime += Time.deltaTime;
+
+        if (_animTime > _animTimer)
+        {
+            _climbAnim.SetActive(false);
+            _climbingHuman.SetActive(true);
+            _climbingHuman.transform.position = TeleportPoint.transform.position;
+            _isClimbing = false;
+        }
+    }
+
     public void Interact()
     {
 
@@ -19,7 +47,11 @@ public class Echelle : MonoBehaviour, IInteractable
 
     public bool JumpOn(HumanMotor Human)
     {
-        Human.transform.position = TeleportPoint.transform.position;
+        _animTime = 0f;
+        _climbingHuman = Human.gameObject;
+        _climbingHuman.SetActive(false);
+        _climbAnim.SetActive(true);
+        _isClimbing = true;
         return true;
     }
 
