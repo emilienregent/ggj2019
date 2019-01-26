@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class OrcMotion : MonoBehaviour, ICharacterMotion
 {
-    private const string IS_MOVING_KEY = "isMoving";
+    private const string IS_MOVING_KEY = "IsMoving";
 
     private Animator _animator = null;
 

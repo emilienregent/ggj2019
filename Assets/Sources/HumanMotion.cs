@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class HumanMotion : MonoBehaviour, ICharacterMotion
 {
-    private const string IS_WALKING_KEY = "isWalking";
+    private const string IS_WALKING_KEY = "IsWalking";
 
     private Animator _animator = null;
 

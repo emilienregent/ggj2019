@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour
             {
                 PlayerCharacter.Jump();
             }
+
             if (IsPressedAction(Button.BUTTON_X))
             {
                 PlayerCharacter.Interact();

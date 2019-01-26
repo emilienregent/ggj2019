@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8434464838848051816}
   - component: {fileID: 6053683988631087594}
   - component: {fileID: 7773435694802138709}
+  - component: {fileID: 3218216522681860121}
   m_Layer: 0
   m_Name: VisualHuman
   m_TagString: Untagged
@@ -99,3 +100,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3218216522681860121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4370536699109911110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e86d82c75edc496f8030f7cadee9fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
