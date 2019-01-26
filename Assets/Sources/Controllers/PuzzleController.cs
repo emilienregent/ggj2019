@@ -7,12 +7,14 @@ public class PuzzleController : MonoBehaviour
     [SerializeField]
     private Transform _humanSpawn = null;
 
-    public GameObject _human = null;
+    private GameObject _human = null;
 
     private void Awake()
     {
+        _human = GameObject.FindWithTag(PlayerTag.HUMAN.ToString());
         _gameCamera = Camera.main.GetComponent<GameCamera>();
 
+        UnityEngine.Assertions.Assert.IsNotNull(_human, "Can't find a HUMAN player.");
         UnityEngine.Assertions.Assert.IsNotNull(_gameCamera, "Can't find a GameCamera behavior on main camera.");
     }
 
