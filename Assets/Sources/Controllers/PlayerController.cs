@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        PlayerCharacter = GetComponent<ICharacter>();
+        PlayerCharacter = GetComponentInChildren<ICharacter>();
     }
 
     public void AssignGamepad(int index, bool isGamepad)
@@ -60,8 +60,6 @@ public class PlayerController : MonoBehaviour
             float vertical = _gamepadState == GamepadState.GAMEPAD_PLUGGED
                 ? Input.GetAxis("P" + _index + "_Vertical")
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
-
-            //TODO: Call Move on iCharacter with the horizontal and vertical
             PlayerCharacter.Movement(horizontal, vertical);
         }
     }

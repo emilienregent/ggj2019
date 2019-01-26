@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - WaterVolume
+  - CameraAnchor
   layers:
   - Default
   - TransparentFX
@@ -41,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Human
+    uniqueID: 985143365
+    locked: 0
+  - name: Ground
+    uniqueID: 2838351515
+    locked: 0
+  - name: Orc
+    uniqueID: 267577807
     locked: 0

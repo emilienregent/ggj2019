@@ -5,58 +5,51 @@ using UnityEngine;
 public class HumanMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
-    [SerializeField]
-    private float JumpForce;
+
+    [SerializeField] private float MoveForce;
+    [SerializeField] private float JumpForce;
+
     private IInteractable CanInteractWith;
+    public List<IInteractable> InteractableList { get; set; }
 
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CanInteractWith = collision.transform.GetComponent<IInteractable>();
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (CanInteractWith == collision.transform.GetComponent<IInteractable>())
-        {
-            CanInteractWith = null;
-        }
-    }
-
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
-        rbody.AddForce(new Vector2(HorizontalMovement, 0));
+        Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
+        Debug.Log(HorizontalMovement);
+
+        rbody.AddForce(force);
     }
 
     public void Jump()
     {
         if (IsGrounded())
         {
-            rbody.AddForce(new Vector2(0,JumpForce));
+            rbody.AddForce(new Vector2(0f,JumpForce));
         }
     }
 
     private bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.55f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 1.1f);
+
         if (hit)
         {
             return true;
         }
+
         return false;
 
     }
     public void Interact()
     {
-        Debug.Log("Human Interact Attempt");
-        if (CanInteractWith == null)
+        foreach (IInteractable InteractWith in InteractableList)
         {
-            Debug.Log("no interactable nearby");
-            return;
+            InteractWith.Interact();
         }
-        CanInteractWith.Interact();
     }
 }

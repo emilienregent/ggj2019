@@ -5,31 +5,33 @@ using UnityEngine;
 public class OrcaMotor : MonoBehaviour, ICharacter
 {
     private Rigidbody2D rbody;
-    private IInteractable CanInteractWith;
+    private IInteractable CanDashIn;
     private float DashButtonSpeed = 0.3f;
-    [SerializeField]
-    private float DashForce;
+    [SerializeField] private float MoveForce;
+    [SerializeField] private float DashForce;
     private bool IsFacingRight;
     private float DashInteractTime;
+    [SerializeField]
     public List<GameObject> WaterVolumes;
+    public List<IInteractable> InteractableList { get; set; }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CanInteractWith = collision.transform.GetComponent<IInteractable>();
+        CanDashIn = collision.transform.GetComponent<IInteractable>();
         if (DashInteractTime >= Time.time)
         {
-            if (CanInteractWith != null)
+            if (CanDashIn != null)
             {
-                CanInteractWith.DashIn();
+                CanDashIn.DashIn();
             }
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (CanInteractWith == collision.transform.GetComponent<IInteractable>())
+        if (CanDashIn == collision.transform.GetComponent<IInteractable>())
         {
-            CanInteractWith = null;
+            CanDashIn = null;
         }
     }
 
@@ -41,9 +43,9 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     {
         if (WaterVolumes.Count == 0)
         {
-            rbody.gravityScale = 0;
+            rbody.gravityScale = 1;
         }
-        else rbody.gravityScale = 1;
+        else rbody.gravityScale = 0;
     }
 
     public void Movement(float HorizontalMovement, float VerticalMovement)
@@ -52,12 +54,17 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         {
             return;
         }
-        rbody.AddForce(new Vector2(HorizontalMovement, VerticalMovement));
+
+        Vector2 force = new Vector2(HorizontalMovement, VerticalMovement) * MoveForce;
+
+        rbody.AddForce(force);
+
         if (HorizontalMovement > 0)
         {
             IsFacingRight = true;
         }
         else IsFacingRight = false;
+
         DashInteractTime = Time.time + 0.5f;
     }
 
@@ -65,19 +72,18 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     {
         if (IsFacingRight)
         {
-            rbody.AddForce(new Vector2(DashForce, 0));
+            rbody.AddForce(new Vector2(DashForce, 0f));
         }
-        else rbody.AddForce(new Vector2(-DashForce, 0));
+        else rbody.AddForce(new Vector2(-DashForce, 0f));
     }
 
     public void Interact()
     {
 
-        if (CanInteractWith == null)
+        foreach(IInteractable InteractWith in InteractableList)
         {
-            return;
+            InteractWith.Interact();
         }
-        CanInteractWith.Interact();
     }
 }
 
