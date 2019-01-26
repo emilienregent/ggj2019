@@ -17,4 +17,9 @@ public class OrcMotion : MonoBehaviour, ICharacterMotion
     {
         _animator.SetBool(IS_MOVING_KEY, isMoving);
     }
+
+    public void SetDirection(bool isFacingRight)
+    {
+        transform.localScale = isFacingRight ? Vector2.right : Vector2.left;
+    }
 }

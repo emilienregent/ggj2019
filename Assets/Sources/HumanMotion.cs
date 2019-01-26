@@ -17,4 +17,9 @@ public class HumanMotion : MonoBehaviour, ICharacterMotion
     {
         _animator.SetBool(IS_WALKING_KEY, isMoving);
     }
+
+    public void SetDirection(bool isFacingRight)
+    {
+        transform.localScale = isFacingRight ? Vector2.right : Vector2.left;
+    }
 }
