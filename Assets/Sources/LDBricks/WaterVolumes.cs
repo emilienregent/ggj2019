@@ -6,14 +6,18 @@ public class WaterVolumes : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("volume enter");
+        //Debug.Log("volume enter");
         OrcaMotor Orca = collision.transform.GetComponent<OrcaMotor>();
-        Orca.WaterVolumes.Add(gameObject);
+
+        if (Orca != null)
+            Orca.WaterVolumes.Add(gameObject);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("volume exit");
+        //Debug.Log("volume exit");
         OrcaMotor Orca = collision.transform.GetComponent<OrcaMotor>();
-        Orca.WaterVolumes.Remove(gameObject);
+
+        if (Orca != null)
+            Orca.WaterVolumes.Remove(gameObject);
     }
 }
