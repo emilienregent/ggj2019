@@ -96,6 +96,7 @@ MonoBehaviour:
   MoveForce: 10
   DashForce: 40
   WaterVolumes: []
+  OrcVisual: {fileID: 587499646781056859}
 --- !u!1001 &8222438860447203517
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,6 +166,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80121c2be544b4ee9948d63d4ad774e3, type: 3}
+--- !u!1 &587499646781056859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8808142864885196774, guid: 80121c2be544b4ee9948d63d4ad774e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8222438860447203517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8383630988955653191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451304868846130426, guid: 80121c2be544b4ee9948d63d4ad774e3,
