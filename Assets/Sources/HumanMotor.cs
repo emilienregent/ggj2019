@@ -11,6 +11,8 @@ public class HumanMotor : MonoBehaviour, ICharacter
     [SerializeField]
     public List<IInteractable> InteractableList { get; set; } = new List<IInteractable>();
 
+    public bool _hasControl = true;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -18,7 +20,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public bool Movement(float HorizontalMovement, float VerticalMovement)
     {
-        if (Mathf.Abs(HorizontalMovement) > 0.2f)
+        if (_hasControl && Mathf.Abs(HorizontalMovement) > 0.2f)
         {
             float distance = MoveMultiplier * HorizontalMovement * Time.deltaTime;
             float direction = distance > 0 ? .6f : -.6f;
@@ -42,6 +44,9 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public void Jump()
     {
+        if (!_hasControl)
+            return;
+
         foreach (IInteractable JumpInteract in InteractableList)
         {
             if (JumpInteract.JumpOn(this))
@@ -67,6 +72,9 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public void Interact()
     {
+        if (!_hasControl)
+            return;
+
         foreach (IInteractable InteractWith in InteractableList)
         {
             InteractWith.Interact();
@@ -76,6 +84,20 @@ public class HumanMotor : MonoBehaviour, ICharacter
     public Vector2 GetPosition()
     {
         return transform.position;
+    }
+
+    public void TransitionStart()
+    {
+        _hasControl = false;
+        rbody.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void TransitionEnd()
+    {
+        rbody.velocity = Vector2.zero;
+        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _hasControl = true;
+        gameObject.SetActive(true);
     }
 
     //private void OnDrawGizmos()

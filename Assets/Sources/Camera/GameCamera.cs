@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class GameCamera : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent _onTransitionStart = new UnityEvent();
     private CameraAnchor[] _anchors = { };
     private CameraAnchor _currentAnchor = null;
     private Vector3 _startPosition = Vector3.zero;
@@ -55,6 +58,8 @@ public class GameCamera : MonoBehaviour
                 _currentMovementTime = 0f;
                 _startPosition = transform.position;
                 _isMoving = true;
+                _onTransitionStart.Invoke();
+
             }
         }
     }

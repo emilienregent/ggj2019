@@ -9,7 +9,8 @@ public class StartView : MonoBehaviour
 
     private void Update()
     {
-        if (overlay.activeSelf == true && GameManager.gameState == GameState.INTRO)
+        if (overlay.activeSelf == true 
+            && (GameManager.gameState == GameState.INTRO || GameManager.gameState == GameState.RUNNING))
         {
             overlay.SetActive(false);
         }
