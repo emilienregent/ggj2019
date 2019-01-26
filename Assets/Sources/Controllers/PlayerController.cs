@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
 
     public PlayerState playerState { get { return _playerState; } }
     public GamepadState gamepadState { get { return _gamepadState; } }
+    private ICharacter PlayerCharacter;
 
     public void AssignGamepad(int index, bool isGamepad)
     {
         _index = index + 1;
         _gamepadState = isGamepad ? GamepadState.GAMEPAD_PLUGGED : GamepadState.KEYBOARD;
         _playerState = PlayerState.INITIALIZED;
+        PlayerCharacter = GetComponent<ICharacter>();
     }
 
     private void Update()
@@ -34,6 +36,14 @@ public class PlayerController : MonoBehaviour
 
                 //TODO: Display player ready state (sound/image)
             }
+            if (IsPressedAction(Button.BUTTON_A))
+            {
+                PlayerCharacter.Jump();
+            }
+            if (IsPressedAction(Button.BUTTON_X))
+            {
+                PlayerCharacter.Interact();
+            }
         }
 
         if (GameManager.gameState == GameState.RUNNING)
@@ -47,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 : Input.GetAxis("P" + _index + "_Vertical_Keyboard");
 
             //TODO: Call Move on iCharacter with the horizontal and vertical
+            PlayerCharacter.Movement(horizontal, vertical);
         }
     }
 
