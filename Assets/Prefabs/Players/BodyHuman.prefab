@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f92458bfd0f32418e1c1ab2e2e8e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveMultiplier: 0.2
+  MoveMultiplier: 0.1
   JumpForce: 200
 --- !u!1001 &1700450386403187008
 PrefabInstance:
