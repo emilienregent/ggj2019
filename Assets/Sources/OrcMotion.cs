@@ -20,7 +20,7 @@ public class OrcMotion : MonoBehaviour, ICharacterMotion
 
     public void SetDirection(bool isFacingRight)
     {
-        float directionX = isFacingRight ? 1f : -1f;
+        float directionX = isFacingRight ? -1f : 1f;
 
         transform.localScale = new Vector2(directionX, 1f);
     }
