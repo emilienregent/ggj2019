@@ -20,7 +20,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
     {
         if (Mathf.Abs(HorizontalMovement) > 0.2f)
         {
-            float distance = MoveMultiplier * HorizontalMovement;
+            float distance = MoveMultiplier * HorizontalMovement * Time.deltaTime;
             float direction = distance > 0 ? .6f : -.6f;
 
             Collider2D pushing = Physics2D.OverlapArea(
@@ -30,7 +30,9 @@ public class HumanMotor : MonoBehaviour, ICharacter
             );
 
             if (!pushing || pushing.isTrigger == true)
-                transform.position += new Vector3(MoveMultiplier * HorizontalMovement, 0f, 0f);
+            {
+                rbody.transform.Translate(new Vector3(MoveMultiplier * HorizontalMovement, rbody.velocity.y * Time.deltaTime, 0f));
+            }
 
             return true;
         }
