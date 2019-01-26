@@ -66,8 +66,6 @@ public class OrcaMotor : MonoBehaviour, ICharacter
         }
         else IsFacingRight = false;
 
-        DashInteractTime = Time.time + 0.5f;
-
         return Mathf.Approximately(HorizontalMovement, 0f) == false || Mathf.Approximately(VerticalMovement, 0f) == false;
     }
 
@@ -78,6 +76,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
             rbody.AddForce(new Vector2(DashForce, 0f));
         }
         else rbody.AddForce(new Vector2(-DashForce, 0f));
+        DashInteractTime = Time.time + 0.3f;
     }
 
     public void Interact()
