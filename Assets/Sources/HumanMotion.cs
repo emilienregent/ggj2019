@@ -24,4 +24,9 @@ public class HumanMotion : MonoBehaviour, ICharacterMotion
 
         transform.localScale = new Vector2(directionX, 1f);
     }
+
+    public void DoJump()
+    {
+        // Do Nothing Yet
+    }
 }

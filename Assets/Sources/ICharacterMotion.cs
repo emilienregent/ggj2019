@@ -5,4 +5,5 @@ public interface ICharacterMotion
 {
     void SetMovement(bool isMoving);
     void SetDirection(bool isFacingRight);
+    void DoJump();
 }

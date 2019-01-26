@@ -68,6 +68,8 @@ public class PlayerController : MonoBehaviour
             if (IsPressedAction(Button.BUTTON_A))
             {
                 PlayerCharacter.Jump();
+
+                PlayerMotion.DoJump();
             }
 
             if (IsPressedAction(Button.BUTTON_X))

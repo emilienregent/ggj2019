@@ -5,6 +5,7 @@ using System.Collections;
 public class OrcMotion : MonoBehaviour, ICharacterMotion
 {
     private const string IS_MOVING_KEY = "IsMoving";
+    private const string DASH_KEY = "Dash";
 
     private Animator _animator = null;
 
@@ -23,5 +24,10 @@ public class OrcMotion : MonoBehaviour, ICharacterMotion
         float directionX = isFacingRight ? -1f : 1f;
 
         transform.localScale = new Vector2(directionX, 1f);
+    }
+
+    public void DoJump()
+    {
+        _animator.SetTrigger(DASH_KEY);
     }
 }
