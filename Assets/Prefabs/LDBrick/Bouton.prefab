@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8568397238185193431}
   - component: {fileID: 2310129307504748293}
   m_Layer: 0
-  m_Name: Porte
+  m_Name: Bouton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
