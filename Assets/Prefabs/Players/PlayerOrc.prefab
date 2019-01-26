@@ -56,6 +56,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodyOrc
       objectReference: {fileID: 0}
+    - target: {fileID: 9153489709519513813, guid: 9e08912897d424c49b5c096f2362d0f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8930792719323542263, guid: 9e08912897d424c49b5c096f2362d0f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -111,11 +116,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2628618141291730886, guid: 9e08912897d424c49b5c096f2362d0f8,
+        type: 3}
+      propertyPath: OrcVisual
+      value: 
+      objectReference: {fileID: 1401021289733448098}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e08912897d424c49b5c096f2362d0f8, type: 3}
 --- !u!4 &6964489209741816846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8930792719323542263, guid: 9e08912897d424c49b5c096f2362d0f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1969861531359184633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1401021289733448098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 587499646781056859, guid: 9e08912897d424c49b5c096f2362d0f8,
     type: 3}
   m_PrefabInstance: {fileID: 1969861531359184633}
   m_PrefabAsset: {fileID: 0}

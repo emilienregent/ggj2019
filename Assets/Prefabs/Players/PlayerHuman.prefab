@@ -56,6 +56,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodyHuman
       objectReference: {fileID: 0}
+    - target: {fileID: 1733154835226081825, guid: 7634ae6accf444724b5830c5be89dce8,
+        type: 3}
+      propertyPath: m_TagString
+      value: HumanBody
+      objectReference: {fileID: 0}
     - target: {fileID: 8699874054390152134, guid: 7634ae6accf444724b5830c5be89dce8,
         type: 3}
       propertyPath: m_LocalPosition.x
