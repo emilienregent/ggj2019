@@ -7,7 +7,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
     private Rigidbody2D rbody;
     [SerializeField]
     private float JumpForce;
-    public List<GameObject> InteractableList { get; set; }
+    public List<IInteractable> InteractableList { get; set; }
 
     void Start()
     {
@@ -39,10 +39,9 @@ public class HumanMotor : MonoBehaviour, ICharacter
     }
     public void Interact()
     {
-        foreach (GameObject InteractWith in InteractableList)
+        foreach (IInteractable InteractWith in InteractableList)
         {
-            IInteractable InteractWithComponent = InteractWith.GetComponent<IInteractable>();
-            InteractWithComponent.Interact();
+            InteractWith.Interact();
         }
     }
 }
