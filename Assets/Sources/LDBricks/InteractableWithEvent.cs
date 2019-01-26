@@ -20,6 +20,11 @@ public class InteractableWithEvent : MonoBehaviour, IInteractable
         OnDash.Invoke();
     }
 
+    public bool JumpOn(HumanMotor Human)
+    {
+        return false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)

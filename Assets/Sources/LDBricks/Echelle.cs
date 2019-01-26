@@ -1,24 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Bouton2etats : MonoBehaviour, IInteractable
+public class Echelle : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private UnityEvent OnButtonOn;
-    [SerializeField]
-    private UnityEvent OnButtonOff;
-    private bool ButtonOn = false;
+    private GameObject TeleportPoint;
 
     public void Interact()
     {
-        if (ButtonOn)
-        {
-            OnButtonOff.Invoke();
-        }
-        else OnButtonOn.Invoke();
-        ButtonOn = !ButtonOn;
+
     }
 
     public void DashIn()
@@ -26,23 +17,20 @@ public class Bouton2etats : MonoBehaviour, IInteractable
 
     }
 
-    public bool JumpOn(HumanMotor Motor)
+    public bool JumpOn(HumanMotor Human)
     {
-        return false;
+        Human.transform.position = TeleportPoint.transform.position;
+        return true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)
-        {
             collision.GetComponent<ICharacter>().InteractableList.Add(this);
-        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<ICharacter>() != null)
-        {
             collision.GetComponent<ICharacter>().InteractableList.Remove(this);
-        }
     }
 }

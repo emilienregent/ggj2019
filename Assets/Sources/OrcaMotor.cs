@@ -10,7 +10,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     [SerializeField] private float MoveForce;
     [SerializeField] private float DashForce;
     private bool IsFacingRight;
-    private float DashInteractTime;
+    private float DashDelay;
     [SerializeField]
     public List<GameObject> WaterVolumes;
     public List<IInteractable> InteractableList { get; set; } = new List<IInteractable>();
@@ -20,7 +20,7 @@ public class OrcaMotor : MonoBehaviour, ICharacter
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CanDashIn = collision.transform.GetComponent<IInteractable>();
-        if (DashInteractTime >= Time.time)
+        if (DashDelay >= Time.time)
         {
             if (CanDashIn != null)
             {
@@ -73,12 +73,16 @@ public class OrcaMotor : MonoBehaviour, ICharacter
 
     public void Jump()
     {
+        if (DashDelay <= Time.time)
+        {
+            return;
+        }
         if (IsFacingRight)
         {
             rbody.AddForce(new Vector2(DashForce, 0f));
         }
         else rbody.AddForce(new Vector2(-DashForce, 0f));
-        DashInteractTime = Time.time + 0.3f;
+        DashDelay = Time.time + 0.3f;
     }
 
     public void Interact()

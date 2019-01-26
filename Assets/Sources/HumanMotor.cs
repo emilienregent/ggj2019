@@ -40,6 +40,13 @@ public class HumanMotor : MonoBehaviour, ICharacter
 
     public void Jump()
     {
+        foreach (IInteractable JumpInteract in InteractableList)
+        {
+            if (JumpInteract.JumpOn(this))
+            {
+                return;
+            }
+        }
         if (IsGrounded())
         {
             rbody.AddForce(new Vector2(0f,JumpForce));
