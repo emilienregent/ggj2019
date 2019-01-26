@@ -20,6 +20,7 @@ public class HumanMotor : MonoBehaviour, ICharacter
     public void Movement(float HorizontalMovement, float VerticalMovement)
     {
         Vector2 force = new Vector2(HorizontalMovement, 0f) * MoveForce;
+        Debug.Log(HorizontalMovement);
 
         rbody.AddForce(force);
     }
