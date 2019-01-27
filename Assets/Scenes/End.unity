@@ -395,8 +395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 198.75, y: -89.80002}
-  m_SizeDelta: {x: 397.5, y: 109.3}
+  m_AnchoredPosition: {x: 198.75, y: -101.58}
+  m_SizeDelta: {x: 397.5, y: 132.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &904856398
 MonoBehaviour:
@@ -431,7 +431,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Emilien Regent \nMartin Wetischek\nNoemie Dumont\nJoseph Simonet"
+  m_Text: 'Special thanks to :
+
+
+    Romane Rakotovao
+
+    The Isart Paris staff and Amplitude Studio'
 --- !u!222 &904856399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -788,8 +793,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -198.75, y: -89.8}
-  m_SizeDelta: {x: 397.5, y: 109.3}
+  m_AnchoredPosition: {x: -198.75, y: -101.57}
+  m_SizeDelta: {x: 397.5, y: 132.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825451918
 MonoBehaviour:
@@ -824,11 +829,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lilian Vidal
-
-    Alex Hartpence
-
-    Guillaume Olivetti'
+  m_Text: "Lilian Vidal\nAlex Hartpence\nGuillaume Olivetti\nJoseph Simonet\nEmilien
+    Regent \nMartin Wetischek\nNoemie Dumont"
 --- !u!222 &1825451919
 CanvasRenderer:
   m_ObjectHideFlags: 0
