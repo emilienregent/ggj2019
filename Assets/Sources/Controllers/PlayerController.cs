@@ -17,10 +17,16 @@ public class PlayerController : MonoBehaviour
     public ICharacter playerCharacter { get { return _playerCharacter; } }
     public ICharacterMotion playerMotion { get { return _playerMotion; } }
 
+    public bool isWalkingIn = false;
+    private readonly float _walkingTimeMax = .5f;
+    public float walkingTime = 0f;
+    public Rigidbody2D rbody = null;
+
     private void Awake()
     {
         _playerCharacter = GetComponentInChildren<ICharacter>();
         _playerMotion = GetComponentInChildren<ICharacterMotion>();
+        rbody = GetComponentInChildren<Rigidbody2D>();
     }
 
     public void AssignGamepad(int index, bool isGamepad)
@@ -49,7 +55,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (GameManager.gameState == GameState.RUNNING)
+        if (isWalkingIn)
+        {
+            if (walkingTime < _walkingTimeMax)
+            {
+                playerMotion.SetMovement(playerCharacter.Movement(.75f, 0f));
+                playerMotion.SetDirection(true);
+                walkingTime += Time.deltaTime;
+            }
+            else
+            {
+                isWalkingIn = false;
+            }
+        }
+        else if (GameManager.gameState == GameState.RUNNING)
         {
             float horizontal = _gamepadState == GamepadState.GAMEPAD_PLUGGED 
                 ? Input.GetAxis("P" + _index + "_Horizontal")

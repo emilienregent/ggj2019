@@ -8,11 +8,13 @@ public class PuzzleController : MonoBehaviour
     private Transform _humanSpawn = null;
 
     private GameObject _human = null;
+    private PlayerController _humanPlayerController = null;
     private Collider2D _collider = null;
 
     private void Awake()
     {
         _human = GameObject.FindWithTag("HumanBody");
+        _humanPlayerController = GameObject.FindWithTag("HUMAN").GetComponent<PlayerController>();
         _gameCamera = Camera.main.GetComponent<GameCamera>();
         _collider = GetComponent<Collider2D>();
 
@@ -31,5 +33,8 @@ public class PuzzleController : MonoBehaviour
     public void SetupPuzzle()
     {
         _human.transform.position = _humanSpawn.position;
+        _humanPlayerController.isWalkingIn = true;
+        _humanPlayerController.walkingTime = 0f;
+        _humanPlayerController.rbody.isKinematic = false;
     }
 }
