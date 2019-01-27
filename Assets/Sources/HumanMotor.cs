@@ -18,6 +18,11 @@ public class HumanMotor : MonoBehaviour, ICharacter
         rbody = GetComponent<Rigidbody2D>();
     }
 
+    public void TurnOffHumanControls()
+    {
+        _hasControl = false;
+    }
+
     public bool Movement(float HorizontalMovement, float VerticalMovement)
     {
         if (_hasControl && Mathf.Abs(HorizontalMovement) > 0.2f)
