@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 794079552280536286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.225, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 6047579537137608550}
   - {fileID: 1476384}
@@ -279,10 +279,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4116870466457914806}
     m_Modifications:
-    - target: {fileID: 4291364551522080280, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+    - target: {fileID: 7245847497737885234, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
-      propertyPath: m_Name
-      value: PuzzleTemplate
+      propertyPath: m_LocalPosition.x
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2764314301147521041, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
@@ -349,10 +349,65 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.89
       objectReference: {fileID: 0}
-    - target: {fileID: 7245847497737885234, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+    - target: {fileID: 1218122308575579712, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: _humanSpawn
+      value: 
+      objectReference: {fileID: 5341819281753871888}
+    - target: {fileID: 4291364551522080280, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_Name
+      value: PuzzleTemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4487903498523119202}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: TransitionEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255296837461554087, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380654990538507509, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8761019971990808969, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
@@ -364,16 +419,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 120
       objectReference: {fileID: 0}
-    - target: {fileID: 4255296837461554087, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218122308575579712, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: _humanSpawn
-      value: 
-      objectReference: {fileID: 5341819281753871888}
     - target: {fileID: 6147050436209406179, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: m_Offset.x
@@ -408,41 +453,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: index
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4487903498523119202}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TransitionEnd
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8761019971990808968, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
@@ -589,23 +599,23 @@ PrefabInstance:
       objectReference: {fileID: 800691644340456601}
     - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
         type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0029058456
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2.1868267
-      objectReference: {fileID: 0}
-    - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
-        type: 3}
       propertyPath: m_Offset.x
       value: -0.0374434
       objectReference: {fileID: 0}
     - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
         type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0029058456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
+        type: 3}
       propertyPath: m_Size.x
       value: 0.40922546
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618447386279375107, guid: c12ff7e08b9c56043bcde97bf066654d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.1868267
       objectReference: {fileID: 0}
     - target: {fileID: 7525974992178518404, guid: c12ff7e08b9c56043bcde97bf066654d,
         type: 3}
