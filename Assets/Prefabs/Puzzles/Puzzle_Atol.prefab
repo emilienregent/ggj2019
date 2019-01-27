@@ -198,10 +198,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3812217113551977631}
     m_Modifications:
-    - target: {fileID: 7245847497737885234, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+    - target: {fileID: 4291364551522080280, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.18
+      propertyPath: m_Name
+      value: PuzzleTemplate
       objectReference: {fileID: 0}
     - target: {fileID: 2764314301147521041, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
@@ -258,16 +258,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7245847497737885234, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761019971990808969, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 112.49
+      objectReference: {fileID: 0}
     - target: {fileID: 1218122308575579712, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: _humanSpawn
       value: 
       objectReference: {fileID: 4313313498734976286}
-    - target: {fileID: 4291364551522080280, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_Name
-      value: PuzzleTemplate
-      objectReference: {fileID: 0}
     - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.size
@@ -308,6 +313,11 @@ PrefabInstance:
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8761019971990808968, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2067997806615662577, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: m_Offset.y
@@ -317,11 +327,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 4.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8761019971990808968, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2391a9d4fa3429590bb575c624dfe0, type: 3}
