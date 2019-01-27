@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class OrcaMotor : MonoBehaviour, ICharacter
 {
-    private Rigidbody2D rbody;
+    public Rigidbody2D rbody;
     private IInteractable CanDashIn;
     private float DashButtonSpeed = 0.3f;
     [SerializeField] private float MoveForce;

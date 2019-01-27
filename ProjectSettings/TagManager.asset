@@ -9,6 +9,8 @@ TagManager:
   - HUMAN
   - ORC
   - HumanBody
+  - OrcBody
+  - Splash
   layers:
   - Default
   - TransparentFX
