@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50064ecfc35614273b37913d9f6504a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWalkingIn: 0
+  walkingTime: 0
+  rbody: {fileID: 0}
 --- !u!1001 &1969861531359184633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 9153489709519513813, guid: 9e08912897d424c49b5c096f2362d0f8,
         type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8930792719323542263, guid: 9e08912897d424c49b5c096f2362d0f8,
         type: 3}
