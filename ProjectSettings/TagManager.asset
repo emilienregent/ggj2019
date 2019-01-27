@@ -19,10 +19,10 @@ TagManager:
   - 
   - 
   - Players
-  - 
-  - 
-  - 
-  - 
+  - ColliderHumanOnly
+  - ColliderOrcOnly
+  - Human
+  - Orc
   - 
   - 
   - 
