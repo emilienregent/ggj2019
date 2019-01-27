@@ -58,3 +58,6 @@ TagManager:
   - name: Orc
     uniqueID: 267577807
     locked: 0
+  - name: Foreground
+    uniqueID: 3071320297
+    locked: 0

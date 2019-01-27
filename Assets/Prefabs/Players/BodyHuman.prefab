@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveMultiplier: 0.1
   JumpForce: 200
+  _hasControl: 1
 --- !u!1001 &1700450386403187008
 PrefabInstance:
   m_ObjectHideFlags: 0
