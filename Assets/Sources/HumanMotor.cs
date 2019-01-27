@@ -91,24 +91,6 @@ public class HumanMotor : MonoBehaviour, ICharacter
         return transform.position;
     }
 
-    public void TransitionStart()
-    {
-        _hasControl = false;
-        rbody.constraints = RigidbodyConstraints2D.FreezeAll;
-        UnityEngine.Debug.Log("Transition Start " + _hasControl);
-    }
-
-    public void TransitionEnd()
-    {
-        //rbody.velocity = Vector2.zero;
-        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rbody.WakeUp();
-        _hasControl = true;
-        gameObject.SetActive(true);
-
-        UnityEngine.Debug.Log("Transition End " + _hasControl);
-    }
-
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = new Color(1, 0, 0, 0.5f);
