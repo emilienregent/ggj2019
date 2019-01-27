@@ -541,6 +541,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3434145972251428650, guid: f08c2d98765fc1941b59ce18306fe586,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293188461989669194, guid: f08c2d98765fc1941b59ce18306fe586,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5293188461989669194, guid: f08c2d98765fc1941b59ce18306fe586,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5293188461989669194, guid: f08c2d98765fc1941b59ce18306fe586,
         type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
@@ -586,6 +601,16 @@ PrefabInstance:
       propertyPath: OrcVisual
       value: 
       objectReference: {fileID: 3763783420918561900}
+    - target: {fileID: 7620336073683320713, guid: f08c2d98765fc1941b59ce18306fe586,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 267577807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620336073683320713, guid: f08c2d98765fc1941b59ce18306fe586,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7620336073683320713, guid: f08c2d98765fc1941b59ce18306fe586,
         type: 3}
       propertyPath: m_Sprite
@@ -878,11 +903,6 @@ PrefabInstance:
         type: 3}
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
