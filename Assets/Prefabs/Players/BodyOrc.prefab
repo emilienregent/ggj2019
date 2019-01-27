@@ -79,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1}
+  m_Size: {x: 1.4608803, y: 0.89135563}
   m_EdgeRadius: 0
 --- !u!114 &2628618141291730886
 MonoBehaviour:
@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveForce: 1
   DashForce: 80
+  DashDelay: 0
   WaterVolumes: []
   OrcVisual: {fileID: 587499646781056859}
 --- !u!1001 &8222438860447203517
