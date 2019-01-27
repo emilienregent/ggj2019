@@ -112,12 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &538774990 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 81496641068579607, guid: eabcf3b0b83ce42b3bca7131281efb00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1019571024995780239}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &610145809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,12 +331,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 538774990}
-    - target: {fileID: 7317616264915400028, guid: 3e5f892cc96054b65a3702a04f509db6,
-        type: 3}
-      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1019571024995780240}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e5f892cc96054b65a3702a04f509db6, type: 3}
 --- !u!1001 &1225253059
@@ -724,7 +713,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1019571024995780239}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538774990}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3f92458bfd0f32418e1c1ab2e2e8e99, type: 3}
