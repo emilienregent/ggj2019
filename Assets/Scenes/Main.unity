@@ -255,9 +255,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
         type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1019571024995780240}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5622096298617498446}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4374954628871768416, guid: e5d3fdc3639b55447ad0b17699728d8a,
+        type: 3}
+      propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1585542958781262809, guid: e5d3fdc3639b55447ad0b17699728d8a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -841,6 +871,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -19.74
       objectReference: {fileID: 0}
+    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -517486085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4320737705985572628, guid: 3b30942cc892c4a3b9e68c82834df604,
         type: 3}
       propertyPath: m_Name
@@ -900,21 +945,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: -517486085
-      objectReference: {fileID: 0}
-    - target: {fileID: 5373235640645892288, guid: 3b30942cc892c4a3b9e68c82834df604,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b30942cc892c4a3b9e68c82834df604, type: 3}
@@ -992,6 +1022,12 @@ PrefabInstance:
       objectReference: {fileID: 1019571024995780240}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75669f60cf02e4928875d101282fa4b6, type: 3}
+--- !u!82 &5622096298617498446 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1715753208106005666, guid: 75669f60cf02e4928875d101282fa4b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5622096298617498445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7235375982351487715
 PrefabInstance:
   m_ObjectHideFlags: 0
