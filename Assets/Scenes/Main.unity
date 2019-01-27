@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1019571024995780240}
+    - target: {fileID: 3464188022542961630, guid: 4a5c5789ccaf24b1dab12d0e936a8172,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a5c5789ccaf24b1dab12d0e936a8172, type: 3}
 --- !u!1001 &815548343
@@ -754,7 +759,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061000009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.17, z: 0}
+  m_LocalPosition: {x: 0.0104, y: -0.18, z: 0}
   m_LocalScale: {x: 0.018867925, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1298194980}
