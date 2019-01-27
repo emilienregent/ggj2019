@@ -10,7 +10,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -637,7 +637,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7951997975166609669, guid: f08c2d98765fc1941b59ce18306fe586, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f08c2d98765fc1941b59ce18306fe586, type: 3}
 --- !u!1 &2579273119382070767 stripped
 GameObject:
@@ -754,6 +755,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3193071977805296912}
     m_Modifications:
+    - target: {fileID: 2067997806615662578, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067997806615662578, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218122308575579712, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: _humanSpawn
+      value: 
+      objectReference: {fileID: 1929852239094158860}
     - target: {fileID: 4291364551522080280, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: m_Name
@@ -824,45 +840,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3.88
       objectReference: {fileID: 0}
-    - target: {fileID: 1380654990538507509, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380654990538507509, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067997806615662578, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067997806615662578, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.58
-      objectReference: {fileID: 0}
     - target: {fileID: 6147050436209406179, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8761019971990808974, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1218122308575579712, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: _humanSpawn
-      value: 
-      objectReference: {fileID: 1929852239094158860}
-    - target: {fileID: 4255296837461554087, guid: 7d2391a9d4fa3429590bb575c624dfe0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8692021379272389862, guid: 7d2391a9d4fa3429590bb575c624dfe0,
         type: 3}
@@ -949,6 +930,26 @@ PrefabInstance:
         type: 3}
       propertyPath: OnCameraReach.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255296837461554087, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380654990538507509, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380654990538507509, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761019971990808974, guid: 7d2391a9d4fa3429590bb575c624dfe0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d2391a9d4fa3429590bb575c624dfe0, type: 3}
